@@ -14,6 +14,22 @@ module.exports = (sequelize) => {
       allowNull: false,
       primaryKey: true,
     },
+    life: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    strength: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    defensa: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    speed: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     height: {
       type: DataTypes.INTEGER,
       allowNull: false,
