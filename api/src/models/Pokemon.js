@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    defensa: {
+    defense: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
@@ -37,6 +37,10 @@ module.exports = (sequelize) => {
     weight: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     createdDB: {
       type: DataTypes.BOOLEAN,
