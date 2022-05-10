@@ -8,14 +8,27 @@ router.get('/', async (req, res) => {
 
     if (name) {
         let filterPoke = allPokemons.filter((poke) => poke.name.toLowerCase().includes(name.toLowerCase()))
-        filterPoke.length ?
-        res.status(200).send(filterPoke)
+        filterPoke.length 
+        ? res.status(200).send(filterPoke)
         : res.status(404).send('Error')
     }
     else {
         res.status(200).send(allPokemons)
     }
     
+})
+
+router.get('/:id', async (req, res) => {
+
+    const {id} = req.params
+    let totalPokemons = await getAllPokemons(id);
+    
+    if(id) {
+        let filterId = totalPokemons.filter((poke) => poke.id == id)
+        filterId.length 
+        ? res.status(200).send(filterId)
+        : res.status(404).send('Error')
+    }
 })
 
 module.exports = router;
