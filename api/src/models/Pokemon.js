@@ -32,11 +32,11 @@ module.exports = (sequelize) => {
     },
     height: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     weight: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     image: {
       type: DataTypes.STRING,
