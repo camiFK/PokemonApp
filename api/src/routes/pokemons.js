@@ -50,15 +50,9 @@ router.post('/', async (req, res) => {
     
     let typesDb = await Type.findAll({
         where: {name: types}
-     })
-    // types.map(async (t) => {
-    //     let typesDb = await Type.findAll({
-    //         where: {name: t}
-    //     })
-    //     console.log(typesDb)
-    // })
+    })
     
-    await newPokemon.addTypes(typesDb)
+    await newPokemon.addType(typesDb)
 
     res.status(200).send(newPokemon)
 })
