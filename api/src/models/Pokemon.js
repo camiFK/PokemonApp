@@ -6,6 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define('pokemon', {
     name: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     id: {
