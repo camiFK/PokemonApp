@@ -20,11 +20,13 @@ const Types = () => {
 
   return (
     <div>
-       <h4 className={Styles.title}>Types:</h4>
+       <h4 className={Styles.title}>Types</h4>
        <select defaultValue='Filter By...' className={Styles.filter} onChange={(e) => handleFilterTypes(e)}>
           <option disabled>Filter By...</option>
+          <option value='all'>All</option>
           {    
-            types?.map((el) => {return <option key={el.name} value={el.name}>{el.name}</option>})
+            types &&
+            types.map((el) => (<option key={el.id} value={el.name}>{el.name}</option>))
           }
             
         </select>
