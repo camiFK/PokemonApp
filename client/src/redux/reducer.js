@@ -62,10 +62,19 @@ function rootReducer (state = initialState, action) {
                 if (b.name > a.name) {return 1}
                 return 0;
               })
-
             return {
                 ...state,
                 allPokemons: sorted
+            }
+        case 'ORDER_STRENGTH':
+            let pokemons4 = state.allPokemons
+            let sorted2 = 
+              action.payload === 'asc'
+              ? pokemons4.sort((a,b) => a.strength - b.strength)
+              : pokemons4.sort((a,b) => b.strength - a.strength)
+            return {
+                ...state,
+                allPokemons: sorted2
             }
         default:
             return state;

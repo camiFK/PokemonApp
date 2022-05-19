@@ -2,6 +2,7 @@ import React from 'react'
 import SelectBy from './SelectBy/SelectBy'
 import Types from './Types/Types'
 import OrderAbc from './OrderAbc/OrderAbc'
+import Strength from './Strength/Strength'
 import Styles from './Filters.module.scss'
 
 const Filters = () => {
@@ -11,6 +12,7 @@ const Filters = () => {
       <SelectBy/>
       <Types/>
       <OrderAbc/>
+      <Strength/>
     </div>
   )
 }

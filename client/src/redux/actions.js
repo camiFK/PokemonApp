@@ -49,3 +49,7 @@ export function filterTypes(payload) {
 export function filterOrderAlp(payload) {
     return {type: 'ORDER_ALP', payload}
 }
+
+export function filterStrength(payload) {
+    return {type: 'ORDER_STRENGTH', payload}
+}
