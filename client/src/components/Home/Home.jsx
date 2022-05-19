@@ -6,6 +6,7 @@ import Styles from './Home.module.scss'
 import Pagination from '../Pagination/Pagination'
 import Cards from '../Cards/Cards'
 import SearchBar from '../SearchBar/SearchBar'
+import Filters from '../Filters/Filters'
 
 const Home = () => {
 
@@ -35,6 +36,7 @@ const Home = () => {
       <h1 className={Styles.title}>Pokemon App</h1>
 
       <SearchBar/>
+      <Filters/>
 
        <Pagination 
         pokemonsPerPage={pokemonsPerPage}

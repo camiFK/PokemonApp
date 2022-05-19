@@ -26,3 +26,11 @@ export const getAllTypes = () => dispatch => {
     .then((json) => dispatch({type: 'GET_TYPES', payload: json.data}))
     .catch(error => console.log(error))
 }
+
+export function filterCreated(parameter) {
+    return {type: 'ORDER_CREATED', parameter}
+}
+
+export function filterTypes(types) {
+    return {type: 'FILTER_TYPES', types}
+}
