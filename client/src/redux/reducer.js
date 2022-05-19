@@ -6,7 +6,7 @@ const initialState = {
 }
 
 function rootReducer (state = initialState, action) {
-    const {parameter, types} = action;
+    const {parameter} = action;
     switch(action.type) {
         case 'GET_POKEMONS':
             return {
@@ -40,12 +40,17 @@ function rootReducer (state = initialState, action) {
                 allPokemons: filter
             }
         case 'FILTER_TYPES':
-            const filtertypes = state.allPokemonsCopy.filter((el) => {
-                return el.types.some(t => t.name.toLowerCase === types.toLowerCase())
-            })
+            const allPokemons2 = state.allPokemonsCopy;
+            const typeFilter = action.payload === "all"
+                ? allPokemons2
+                : allPokemons2.filter((el) =>
+                    el.type
+                      ? el.type[0] === action.payload || el.type[1] === action.payload
+                      : el.types[0].name === action.payload || el.types[1]?.name === action.payload
+                );
             return {
                 ...state,
-                allPokemons: filtertypes
+                allPokemons: typeFilter
             }
         default:
             return state;

@@ -31,6 +31,6 @@ export function filterCreated(parameter) {
     return {type: 'ORDER_CREATED', parameter}
 }
 
-export function filterTypes(types) {
-    return {type: 'FILTER_TYPES', types}
+export function filterTypes(payload) {
+    return {type: 'FILTER_TYPES', payload}
 }

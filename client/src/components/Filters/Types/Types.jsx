@@ -23,9 +23,8 @@ const Types = () => {
 
        <select defaultValue='Filter By...' className={Styles.filter} onChange={(e) => handleFilterTypes(e)}>
           <option disabled>Filter By...</option>
-          {
-            alltypes &&
-            alltypes.map(type => {return <option key={type} value={type}>{type}</option>})
+          {    
+            alltypes?.map(type => {return <option key={type.name} value={type.name}>{type.name}</option>})
           }
             
         </select>
