@@ -40,14 +40,14 @@ const [error, setError] = useState(false)
    
         <div className={Styles.searchbar}>
          <input
-          className='input'
+          className={Styles.input}
           type='text'
           placeholder='Search...'
           onChange={(e) => handleChange(e)}
           value={name}
          />
          <button 
-         className='btn' 
+         className={Styles.btn} 
          type='submit' 
          onClick={(e) => handleSubmit(e)}>
            Search
