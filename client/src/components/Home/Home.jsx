@@ -1,11 +1,11 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {Link} from 'react-router-dom'
-import '.Home.module.scss'
 import { getPokemons } from '../../redux/actions'
 import Styles from './Home.module.scss'
 import Pagination from '../Pagination/Pagination'
+import Cards from '../Cards/Cards'
+
 
 const Home = () => {
 
@@ -32,15 +32,33 @@ const Home = () => {
   return (
     <div className={Styles.home}>
 
+
        <Pagination 
-        recipesPerPage={pokemonsPerPage}
-        recipesReducer={pokemonsReducer?.length}
+        pokemonsPerPage={pokemonsPerPage}
+        pokemonsReducer={pokemonsReducer?.length}
         paginate={paginate}
         /> 
 
        <div>
          <button className={Styles.homebtn} onClick={handleReload}>Reload</button>
        </div> 
+
+       <div className={Styles.allcards}>
+         {
+           currentPokemons?.map((pokemon) => {
+             return (
+               <Cards
+               key={pokemon.id}
+               id={pokemon.id}
+               name={pokemon.name}
+               image={pokemon.image}
+               types={pokemon.types}
+               />
+             )
+           })
+         }
+
+       </div>
 
     </div>
   )

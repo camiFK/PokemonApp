@@ -1,0 +1,24 @@
+.paginate{
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 110px;
+
+  }
+
+.numbers{
+    color: #eeeeee;
+    font-size: 25px;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 10px;
+    float: left;
+    padding: 0.3rem 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  .numbers:hover{
+    background:rgb(61, 61, 61);
+    cursor: pointer;
+  }
