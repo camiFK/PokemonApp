@@ -5,7 +5,7 @@ import { getPokemons } from '../../redux/actions'
 import Styles from './Home.module.scss'
 import Pagination from '../Pagination/Pagination'
 import Cards from '../Cards/Cards'
-
+import SearchBar from '../SearchBar/SearchBar'
 
 const Home = () => {
 
@@ -32,6 +32,9 @@ const Home = () => {
   return (
     <div className={Styles.home}>
 
+      <h1 className={Styles.title}>Pokemon App</h1>
+
+      <SearchBar/>
 
        <Pagination 
         pokemonsPerPage={pokemonsPerPage}

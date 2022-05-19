@@ -9,14 +9,13 @@ const Pagination = ({pokemonsPerPage, pokemonsReducer, paginate}) => {
     }
 
   return (
-    <div>
-        <div className={Styles.paginate}>
+    <div className={Styles.paginate}>  
         {
             pageNumber?.map(num => (
                 <div key={num} className={Styles.numbers} onClick={() => paginate(num)}>{num}</div>
             ))
         }
-        </div>    
+          
     </div>
   )
 }
