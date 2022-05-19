@@ -7,7 +7,7 @@ import { getAllTypes, filterTypes} from '../../../redux/actions'
 const Types = () => {
 
     const dispatch = useDispatch();
-    const alltypes = useSelector((state) => state.types)
+    const types = useSelector((state) => state.types)
 
     useEffect(() => { 
         dispatch(getAllTypes())
@@ -24,7 +24,7 @@ const Types = () => {
        <select defaultValue='Filter By...' className={Styles.filter} onChange={(e) => handleFilterTypes(e)}>
           <option disabled>Filter By...</option>
           {    
-            alltypes?.map(type => {return <option key={type.name} value={type.name}>{type.name}</option>})
+            types?.map((el) => {return <option key={el.name} value={el.name}>{el.name}</option>})
           }
             
         </select>
