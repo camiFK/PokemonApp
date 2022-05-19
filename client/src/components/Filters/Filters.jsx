@@ -6,11 +6,7 @@ import Styles from './Filters.module.scss'
 const Filters = () => {
   return (
     <div className={Styles.ctn}>
-      <h3 className={Styles.title}>Filters:</h3>
-
-      <div>
-        
-      </div>
+      <h3 className={Styles.title}>FILTERS</h3>
       <SelectBy/>
       <Types/>
     </div>

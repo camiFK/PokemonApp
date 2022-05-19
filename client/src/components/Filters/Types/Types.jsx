@@ -20,7 +20,7 @@ const Types = () => {
 
   return (
     <div>
-
+       <h4 className={Styles.title}>Types:</h4>
        <select defaultValue='Filter By...' className={Styles.filter} onChange={(e) => handleFilterTypes(e)}>
           <option disabled>Filter By...</option>
           {    

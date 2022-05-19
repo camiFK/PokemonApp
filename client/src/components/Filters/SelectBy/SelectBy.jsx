@@ -19,8 +19,8 @@ const SelectBy = () => {
   }
 
   return (
-    <div>
-
+    <div className={Styles.ctn}>
+        <h4 className={Styles.title}>Created - Api</h4>
         <select className={Styles.select} defaultValue='Select By...' onChange={e => handleSelectBy(e)}>
           <option disabled>Select By...</option>
           <option value='all'>All</option>
