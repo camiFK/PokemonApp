@@ -30,7 +30,17 @@
     height: 35px;
     width: 80px;
     position: absolute;
-    top: 50px;
+    top: 40px;
     right: 20px;
 }
 .homebtn:hover{cursor: pointer;}
+
+.create {
+    border-radius: 8px;
+    height: 35px;
+    width: 150px;
+    position: absolute;
+    left: 55px;
+    top: 40px;
+}
+.create:hover{cursor: pointer;}

@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPokemons } from '../../redux/actions'
+import { Link } from 'react-router-dom'
 import Styles from './Home.module.scss'
 import Pagination from '../Pagination/Pagination'
 import Cards from '../Cards/Cards'
@@ -35,6 +36,10 @@ const Home = () => {
 
       <h1 className={Styles.title}>Pokemon App</h1>
 
+        <Link to='/create'>
+          <button className={Styles.create}>Create Pokemon</button>
+        </Link>
+        
       <SearchBar/>
       <Filters/>
 
@@ -64,6 +69,8 @@ const Home = () => {
          }
 
        </div>
+
+       
 
     </div>
   )

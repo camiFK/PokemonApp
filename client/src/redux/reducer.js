@@ -6,6 +6,7 @@ const initialState = {
 }
 
 function rootReducer (state = initialState, action) {
+    const {newPokemon} = action;
     switch(action.type) {
         case 'GET_POKEMONS':
             return {
@@ -86,9 +87,12 @@ function rootReducer (state = initialState, action) {
                 ...state,
                 allPokemons: [...sorted2]
             }
-        default:
-            return state;
-        
+        case 'POST_POKEMON':
+            return {
+                ...state,
+                allPokemons: [...state.allPokemons, ...newPokemon]
+            }
+        default: return state;    
     }
 }
 

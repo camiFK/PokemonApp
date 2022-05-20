@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+.ctn {
+    background-image: url('../media/2.jpg');
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    margin-top: 0px;
+}
+
+.homebtn {
+    width: 80px;
+    border-radius: 8px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.homebtn:hover{cursor: pointer;}
+
+.form {
+    width: 940px;
+    height: 580px;
+    background-color: rgba(0, 0, 0, 0.236);
+    border-radius: 8px;
+    position: absolute;
+    left: 60px;
+}

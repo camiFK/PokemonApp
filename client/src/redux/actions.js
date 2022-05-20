@@ -37,7 +37,15 @@ export function getAllTypes() {
         } catch (error) {console.log(error)}
     }
 }
+ export function postPokemon(input) {
+     return async function(dispatch) {
+         try {
+             let newPokemon = await axios.post('http://localhost:3001/pokemons/create', input)
+             return dispatch ({type: 'POST_POKEMON', newPokemon})
+         } catch (error) {console.log(error)}
+     }
 
+ }
 
 export function filterCreated(payload) {
     return {type: 'ORDER_CREATED', payload}

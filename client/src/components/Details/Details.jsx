@@ -66,8 +66,7 @@ const Details = () => {
           <div className={Styles.loader}>
             <p className={Styles.load}>Loading...</p>
           </div>
-      }
-           
+      }   
              <Link to='/home'> 
              <button className={Styles.detbtn}>Home</button>
              </Link>     
