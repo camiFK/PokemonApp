@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
 
     const {id} = req.params
-    let totalPokemons = await getAllPokemons(id);
+    let totalPokemons = await getAllPokemons();
     
     if(id) {
         let filterId = totalPokemons.filter((poke) => poke.id == id)
