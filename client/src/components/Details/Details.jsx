@@ -34,6 +34,29 @@ const Details = () => {
               </div>
               </div>
 
+                <h3 className={Styles.title}>Statistics</h3>
+              <div className={Styles.column2}>
+
+                <h4 className={Styles.subtitle}>Life</h4>
+                <p className={Styles.el}>{poked[0].life}</p>
+
+                <h4 className={Styles.subtitle}>Strength</h4>
+                <p className={Styles.el}>{poked[0].strength}</p>
+
+                <h4 className={Styles.subtitle}>Defense</h4>
+                <p className={Styles.el}>{poked[0].defense}</p>
+
+                <h4 className={Styles.subtitle}>Speed</h4>
+                <p className={Styles.el}>{poked[0].speed}</p>
+
+                <h4 className={Styles.subtitle}>Height</h4>
+                <p className={Styles.el}>{poked[0].height}</p>
+
+                <h4 className={Styles.subtitle}>Weight</h4>
+                <p className={Styles.el}>{poked[0].weight}</p>
+      
+              </div>
+
 
 
 
@@ -43,8 +66,14 @@ const Details = () => {
           :
           <div>
 
+
           </div>
       }
+           
+             <Link to='/home'> 
+             <button className={Styles.detbtn}>Home</button>
+             </Link>
+            
 
 
     </div>

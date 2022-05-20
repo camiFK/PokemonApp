@@ -9,11 +9,11 @@ const Cards = ({name, image, types, id}) => {
 
          <div className={Styles.link}>
           <Link to={`/detail/${id}`}>
-           <p className={Styles.name}>{name}</p>
+           <p className={Styles.name}>{name.charAt(0).toUpperCase() + name.slice(1)}</p>
           </Link>
          </div>
 
-         <img src={image} className={Styles.img} alt="Img not found"/> 
+         <img src={image} className={Styles.img} alt="Img not found" height="150px" width="100px"/> 
 
          <div className={Styles.types}>
             <ul>

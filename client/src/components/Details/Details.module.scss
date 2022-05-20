@@ -13,6 +13,7 @@
     text-align: center;
     margin-top: 20px;
     font-family: 'Roboto Mono', monospace;
+    margin-bottom: 20px;
 }
 
 .detcard{
@@ -41,3 +42,27 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+.column2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.subtitle {
+    color: white;
+    text-align: center;
+}
+
+.el {
+    color: white;
+    text-align: center;
+}
+
+.detbtn {
+    width: 80px;
+    border-radius: 8px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.detbtn:hover{cursor: pointer}
