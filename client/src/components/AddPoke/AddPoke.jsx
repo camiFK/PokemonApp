@@ -29,12 +29,55 @@ const AddPoke = () => {
 
       <form className={Styles.form}>
 
+        <div>
+          <label className={Styles.subtitle}>Name:</label>
+          <input className={Styles.input} type='text' name='name'/>
+        </div>
 
+        <div>
+          <label className={Styles.subtitle}>Life</label>
+          <input className={Styles.input} type='number' name='life'/>
+        </div>
 
+        <div>
+          <label className={Styles.subtitle}>Strength</label>
+          <input className={Styles.input} type='number' name='strength'/>
+        </div>
+        
+        <div>
+          <label className={Styles.subtitle}>Defense</label>
+          <input className={Styles.input} type='number' name='defense'/>
+        </div>
 
+        <div>
+          <label className={Styles.subtitle}>Speed</label>
+          <input className={Styles.input} type='number' name='speed'/>
+        </div>
 
+        <div>
+          <label className={Styles.subtitle}>Height</label>
+          <input className={Styles.input} type='number' name='height'/>
+        </div>
 
+        <div>
+          <label className={Styles.subtitle}>Weight</label>
+          <input className={Styles.input} type='number' name='weight'/>
+        </div>
 
+        <div>
+            <label>Image</label>
+            <input className={Styles.image} type='url' name='image'/>
+        </div>
+
+        <div>
+            <select>
+                <option disabled key='' value=''>Types</option>
+                { 
+                  types &&
+                  types.map((el) => (<option key={el.id} value={el.name}>{el.name}</option>))
+                  }
+            </select>
+        </div>
 
 
       </form>
