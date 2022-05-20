@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getPokeDetail } from '../../redux/actions';
+import { getPokeDetail, cleanDetail } from '../../redux/actions';
 import Styles from './Details.module.scss'
 
 const Details = () => {
@@ -13,6 +13,9 @@ const Details = () => {
 
     useEffect(() => {
         dispatch(getPokeDetail(id))
+        return () => {
+         dispatch(cleanDetail(dispatch))
+        }
        },[dispatch, id])
 
   return (

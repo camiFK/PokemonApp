@@ -28,6 +28,11 @@ function rootReducer (state = initialState, action) {
                 ...state,
                 detail: action.payload
             }
+        case 'CLEAN_DETAIL': 
+        return {
+            ...state,
+            detail: action.payload
+        }
         case 'GET_TYPES':
             return {
                 ...state,

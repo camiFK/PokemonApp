@@ -12,6 +12,10 @@ export const getPokeDetail = (id) => dispatch => {
     .catch(error => console.log(error))
 }
 
+export const cleanDetail = (dispatch) => {
+    return dispatch({type: 'CLEAN_DETAIL', payload: []})
+}
+
 export const cleanPokemons = (dispatch) => {
     return dispatch({type: 'CLEAN_POKEMONS', payload: []})
 };
