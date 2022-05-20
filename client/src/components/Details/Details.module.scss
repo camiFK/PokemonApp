@@ -66,3 +66,20 @@
     margin-left: 10px;
 }
 .detbtn:hover{cursor: pointer}
+
+.loader {
+    width: 750px;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 0.481);
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+
+.load {
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+}

@@ -22,7 +22,8 @@ const Details = () => {
     <div className={Styles.ctn}>
 
       {
-          poked.length > 0 ? 
+          poked.length > 0 
+          ? 
           <div className={Styles.detcard}>
               <h3 className={Styles.title}>{poked[0].name.charAt(0).toUpperCase() + poked[0].name.slice(1) + " " + poked[0].id} </h3>
 
@@ -60,24 +61,16 @@ const Details = () => {
       
               </div>
 
-
-
-
-
-
           </div>
           :
-          <div>
-
-
+          <div className={Styles.loader}>
+            <p className={Styles.load}>Loading...</p>
           </div>
       }
            
              <Link to='/home'> 
              <button className={Styles.detbtn}>Home</button>
-             </Link>
-            
-
+             </Link>     
 
     </div>
   )
