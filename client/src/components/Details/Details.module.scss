@@ -26,10 +26,18 @@
 }
 
 .img {
-    text-align: center
+    text-align: center;
 }
 
 .types {
     color: white;
     text-align: center;
+    line-height: 2.5;
+    margin-top: 25px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.column1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }

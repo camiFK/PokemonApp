@@ -21,8 +21,9 @@ const Details = () => {
       {
           poked.length > 0 ? 
           <div className={Styles.detcard}>
-              <h3 className={Styles.title}>{poked[0].name.charAt(0).toUpperCase() + poked[0].name.slice(1)}</h3>
+              <h3 className={Styles.title}>{poked[0].name.charAt(0).toUpperCase() + poked[0].name.slice(1) + " " + poked[0].id} </h3>
 
+              <div className={Styles.column1}>
               <div className={Styles.img}>
                 <img src={poked[0].image} alt="img not found" height="250px" width="200px"/>
               </div>
@@ -30,6 +31,7 @@ const Details = () => {
               <div className={Styles.types}>
                   <h3>Types</h3>
                   <p>{poked[0].types?.map(t => (<li>{t}</li>))}</p>
+              </div>
               </div>
 
 
