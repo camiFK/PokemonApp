@@ -6,6 +6,16 @@ export const getPokemons = () => dispatch => {
     .catch(error => console.log(error))
 }
 
+export const getPokeDetail = (id) => dispatch => {
+    return axios(`http://localhost:3001/pokemons/${id}`)
+    .then((json) => dispatch({type: 'GET_DETAIL', payload: json.data}))
+    .catch(error => console.log(error))
+}
+
+export const cleanPokemons = (dispatch) => {
+    return dispatch({type: 'CLEAN_POKEMONS', payload: []})
+};
+
 export function getPokeName(name) {
     return async function(dispatch) {
         try {
@@ -15,26 +25,13 @@ export function getPokeName(name) {
     }
 }
 
-// export const getAllTypes = () => dispatch => {
-//     return axios(`http://localhost:3001/types`)
-//     .then((json) => dispatch({type: 'GET_TYPES', payload: json.data.map(el => el.name)}))
-//     .catch(error => console.log(error))
-// }
-
 export function getAllTypes() {
     return async function(dispatch) {
         try {
             const json = await axios.get(`http://localhost:3001/types`)
             return dispatch({type: 'GET_TYPES', payload: json.data})
-        } catch (error) {
-            console.log(error)
-        }
+        } catch (error) {console.log(error)}
     }
-}
-export const getPokeDetail = (id) => dispatch => {
-    return axios(`http://localhost:3001/pokemons/${id}`)
-    .then((json) => dispatch({type: 'GET_DETAIL', payload: json.data}))
-    .catch(error => console.log(error))
 }
 
 
@@ -53,3 +50,4 @@ export function filterOrderAlp(payload) {
 export function filterStrength(payload) {
     return {type: 'ORDER_STRENGTH', payload}
 }
+

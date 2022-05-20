@@ -4,7 +4,7 @@ import Styles from './Pagination.module.scss'
 const Pagination = ({pokemonsPerPage, pokemonsReducer, paginate}) => {
 
     const pageNumber = []
-    for (let i = 1; i < Math.ceil(pokemonsReducer/pokemonsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(pokemonsReducer/pokemonsPerPage); i++) {
         pageNumber.push(i)
     }
 

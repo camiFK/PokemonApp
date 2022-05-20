@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.ctn {
+    background-image: url('../media/5.jpg');
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.title {
+    margin: 0px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.detcard{
+    width: 750px;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 0.481);
+    border-radius: 8px;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+
+.img {
+    text-align: center
+}
+
+.types {
+    color: white;
+    text-align: center;
+}
