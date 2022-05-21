@@ -78,9 +78,11 @@ const AddPoke = () => {
 
 
         </div>
-        <div>
-            <select>
-                <option disabled key='' value=''>Types</option>
+
+        <div className={Styles.types}>
+            <p className={Styles.subtitle}>Types</p>
+            <select defaultValue='Types'>
+                <option disabled>Types</option>
                 { 
                   types &&
                   types.map((el) => (<option key={el.id} value={el.name}>{el.name}</option>))
