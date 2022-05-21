@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
+@mixin inputs {
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid #c4c4c4;
+    padding: 0 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+.input {
+    @include inputs()
+}
+
+@mixin subtitles {
+  color: white;
+  margin: 8px;
+}
+.subtitle{@include subtitles()}
 .ctn {
     background-image: url('../media/2.jpg');
     background-size: cover;
@@ -30,4 +49,16 @@
     border-radius: 8px;
     position: absolute;
     left: 60px;
+}
+
+.column1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    line-height: 6.5;
+    justify-content: center;
+}
+
+.inctn {
+    text-align: center;
+    padding-right: 8px;
 }
