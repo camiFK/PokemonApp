@@ -23,8 +23,8 @@ const getPokemonsApi = async () => {
                     speed: poke.data.stats[5].base_stat,
                     height: poke.data.height,
                     weight: poke.data.weight,
-                    image: poke.data.sprites.front_default,
-                    types: poke.data.types.map((el) => { return el.type.name })
+                    image: poke.data.sprites.other.home.front_default,
+                    types: poke.data.types.map((el) => { return{ name: el.type.name }})
                 }
             })
             return pokeData
