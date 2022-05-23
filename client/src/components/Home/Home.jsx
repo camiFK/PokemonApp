@@ -36,7 +36,7 @@ const Home = () => {
 
       <h1 className={Styles.title}>Pokemon App</h1>
 
-        <Link to='/create'>
+        <Link to='/pokemons'>
           <button className={Styles.create}>Create Pokemon</button>
         </Link>
         
@@ -62,7 +62,7 @@ const Home = () => {
                id={pokemon.id}
                name={pokemon.name}
                image={pokemon.image}
-               types={pokemon.types}
+               types={pokemon.types ? pokemon.types : pokemon.types.map(el => el.name)}
                />
              )
            })

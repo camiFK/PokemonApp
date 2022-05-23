@@ -6,6 +6,7 @@ import Strength from './Strength/Strength'
 import Styles from './Filters.module.scss'
 
 const Filters = () => {
+  
   return (
     <div className={Styles.ctn}>
       <h3 className={Styles.title}>FILTERS</h3>

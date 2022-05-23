@@ -40,7 +40,7 @@ export function getAllTypes() {
  export function postPokemon(input) {
      return async function(dispatch) {
          try {
-             let newPokemon = await axios.post('http://localhost:3001/pokemons/create', input)
+             let newPokemon = await axios.post('http://localhost:3001/pokemons', input)
              return dispatch ({type: 'POST_POKEMON', newPokemon})
          } catch (error) {console.log(error)}
      }

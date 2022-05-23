@@ -17,7 +17,7 @@ const Cards = ({name, image, types, id}) => {
 
          <div className={Styles.types}>
             <ul>
-                {types?.map(t => (<li>{t}</li>))}
+                {types?.map(t => (<li>{t.name}</li>))}
             </ul>
          </div>
 

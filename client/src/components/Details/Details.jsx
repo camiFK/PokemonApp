@@ -34,7 +34,7 @@ const Details = () => {
 
               <div className={Styles.types}>
                   <h3>Types</h3>
-                  <p>{poked[0].types?.map(t => (<li>{t}</li>))}</p>
+                  <p>{poked[0].types?.map(t => (<li>{t.name}</li>))}</p>
               </div>
               </div>
 

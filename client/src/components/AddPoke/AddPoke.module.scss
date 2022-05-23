@@ -55,8 +55,6 @@
     left: 100px;
 }
 
-
-
 .types {
     position: relative;
     left: 80px;
@@ -82,21 +80,22 @@
     color: rgba(255, 255, 255, 0.897);
 }
 
-.list {
+.select {
     display: block;
     font-family: 'Verdana', sans-serif;
     color: rgb(0, 0, 0);
     line-height: 1.3;
-    width: 80px;
+    width: 90px;
     height: 30px;
     margin: 20px auto;
     border-radius: 8px;
+    text-align: center;
 }
 
 .btncreate {
     position: absolute;
     top: 550px;
-    left: 430px;
+    left: 380px;
     width: 200px;
     height: 30px;
     border-radius: 8px;

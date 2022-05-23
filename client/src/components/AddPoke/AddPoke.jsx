@@ -60,14 +60,14 @@ const AddPoke = () => {
   }
 
   function handleTypes(e) {
+    if(input.types.length > 3) {
+      alert('Three types maximum')
+    } else {
       setInput({
           ...input,
           types: [...input.types, e.target.value]
       })
-      setError(validate({
-        ...input,
-        [e.target.name] : e.target.value
-      }))
+    }   
   }
 
   function handleDelete(e) {
@@ -113,19 +113,19 @@ const AddPoke = () => {
     <div className={Styles.div2}>
     
           <label className={Styles.subtitle}>Name</label>
-          <input className={Styles.input} type='text' name='name' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='text' name='name' value={input.name} onChange={(e) => handleChange(e)}/>
           {errors.name && <p className={Styles.errors}>{errors.name}</p>}
                    
           <label className={Styles.subtitle}>Image</label>
-          <input className={Styles.input} type='url' name='image' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='url' name='image' value={input.image} onChange={(e) => handleChange(e)}/>
           {errors.image && <p className={Styles.errors}>{errors.image}</p>}
        
           <label className={Styles.subtitle}>Life</label>
-          <input className={Styles.input} type='number' name='life' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='number' name='life' value={input.life} onChange={(e) => handleChange(e)}/>
           {errors.life && <p className={Styles.errors}>{errors.life}</p>}
           
           <label className={Styles.subtitle}>Strength</label>
-          <input className={Styles.input} type='number' name='strength' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='number' name='strength' value={input.strength} onChange={(e) => handleChange(e)}/>
           {errors.strength && <p className={Styles.errors}>{errors.strength}</p>}
        
 
@@ -134,26 +134,25 @@ const AddPoke = () => {
     <div className={Styles.div2}>
         
           <label className={Styles.subtitle}>Defense</label>
-          <input className={Styles.input} type='number' name='defense' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='number' name='defense' value={input.defense} onChange={(e) => handleChange(e)}/>
           {errors.defense && <p className={Styles.errors}>{errors.defense}</p>}
         
           <label className={Styles.subtitle}>Speed</label>
-          <input className={Styles.input} type='number' name='speed' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='number' name='speed' value={input.speed} onChange={(e) => handleChange(e)}/>
           {errors.speed && <p className={Styles.errors}>{errors.speed}</p>}
           
           <label className={Styles.subtitle}>Height</label>
-          <input className={Styles.input} type='number' name='height' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='number' name='height' value={input.height} onChange={(e) => handleChange(e)}/>
           {errors.height && <p className={Styles.errors}>{errors.height}</p>}
    
           <label className={Styles.subtitle}>Weight</label>
-          <input className={Styles.input} type='number' name='weight' onChange={(e) => handleChange(e)}/>
+          <input className={Styles.input} type='number' name='weight' value={input.weight} onChange={(e) => handleChange(e)}/>
           {errors.weight && <p className={Styles.errors}>{errors.weight}</p>}
-    
 
     </div>
 
  </div>     
-            <select defaultValue='Types' className={Styles.list} onChange={(e) => handleTypes(e)}>
+            <select defaultValue='Types' className={Styles.select} onChange={(e) => handleTypes(e)}>
                 <option disabled>Types</option>
                 { 
                   types &&
@@ -169,6 +168,7 @@ const AddPoke = () => {
            </div>))}
 
            <button className={Styles.btncreate} type='submit'>CREATE</button>
+
       </form>
       
     </div>
