@@ -54,7 +54,10 @@ function rootReducer (state = initialState, action) {
             let typeFiltered =
               action.payload === "all"
                 ? pokemons2
-                : pokemons2.filter((e) => e.types.some(e => e.types.name === action.payload));
+                : pokemons2.filter(el => el.types[0].name === action.payload 
+                    || el.types[1]?.name === action.payload
+                    || el.types[2]?.name === action.payload
+                    );
             if (typeFiltered.length <= 0 ) {
                 typeFiltered = pokemons2;
                 alert('Sorry, there are not pokemons with that type :(');
