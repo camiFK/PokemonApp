@@ -34,8 +34,6 @@ const Home = () => {
   return (
     <div className={Styles.home}>
 
-      <h1 className={Styles.title}>Pokemon App</h1>
-
         <Link to='/pokemons'>
           <button className={Styles.create}>Create Pokemon</button>
         </Link>

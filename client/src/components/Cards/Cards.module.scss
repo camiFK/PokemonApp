@@ -5,12 +5,18 @@
     overflow: hidden;
     border-radius: 15px;
     margin: 10px;
-    width: 230px;
+    width: 250px;
     height: 280px;
     background: #fffedf;
     padding: 10px;
     justify-content: center;
     display: flex;
+    box-shadow: 0px 1px 10px(0,0,0,0.2);
+    transition: all 400ms ease;
+}
+
+.container:hover{
+    box-shadow: 5px 5px 20px(0,0,0,0.4);
 }
 
 .name {
