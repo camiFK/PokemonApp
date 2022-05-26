@@ -3,24 +3,17 @@ import {Link, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {getAllTypes, postPokemon} from '../../redux/actions'
 import Styles from './AddPoke.module.scss'
+import  { StyledRange } from './ranges'
 
     const check = /\S+/;
     const regExpr = /^[a-z]+$/i;
-    const regExpUrl = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/g;
-    const nums = /^\d+$/;
 
 function validate(input) {
   let errors = {}
   if (!check.test(input.name) || !regExpr.test(input.name) || input.name.length < 3) {
     errors.name = "Provide a name. Only strings (more than two characters).";
     }
-    if(!nums.test(input.life) || input.life <= 0) {errors.life = "Provide a number. Higher than one.";}
-    if(!nums.test(input.strength) || input.strength <= 0) {errors.strength = "Provide a number. Higher than one.";}
-    if(!nums.test(input.defense) || input.defense <= 0) {errors.defense = "Provide a number. Higher than one.";}
-    if(!nums.test(input.speed) || input.speed <= 0) {errors.speed = "Provide a number. Higher than one.";}
-    if(!nums.test(input.weight) || input.weight <= 0) {errors.weight = "Provide a number. Higher than one.";}
-    if(!nums.test(input.height) || input.height <= 0) {errors.height = "Provide a number. Higher than one.";}
-    if(!regExpUrl.test(input.image)) {errors.image = "Only URL directions.";}
+    if(!/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/g.test(input.image)) {errors.image = "Only URL directions.";}
 
     return errors;
 }
@@ -60,7 +53,7 @@ const AddPoke = () => {
   }
 
   function handleTypes(e) {
-    if(input.types.length > 3) {
+    if(input.types.length >= 3) {
       alert('Three types maximum')
     } else {
       setInput({
@@ -116,38 +109,57 @@ const AddPoke = () => {
           <input className={Styles.input} type='text' name='name' value={input.name} onChange={(e) => handleChange(e)}/>
           {errors.name && <p className={Styles.errors}>{errors.name}</p>}
                    
-          <label className={Styles.subtitle}>Image</label>
-          <input className={Styles.input} type='url' name='image' value={input.image} onChange={(e) => handleChange(e)}/>
-          {errors.image && <p className={Styles.errors}>{errors.image}</p>}
-       
+          <label className={Styles.subtitle}>Defense</label>
+             <label className={Styles.nums}>
+              <StyledRange className={Styles.range} 
+              type='range' name='defense' min={1} max={250} value={input.defense} onChange={(e) => handleChange(e)}/>
+              {input.defense}
+          </label>
+
           <label className={Styles.subtitle}>Life</label>
-          <input className={Styles.input} type='number' name='life' value={input.life} onChange={(e) => handleChange(e)}/>
-          {errors.life && <p className={Styles.errors}>{errors.life}</p>}
-          
+             <label className={Styles.nums}>
+               <StyledRange className={Styles.range} 
+                type='range' name='life' min={1} max={250} value={input.life} onChange={(e) => handleChange(e)}/>
+                {input.life}
+         </label>
+              
           <label className={Styles.subtitle}>Strength</label>
-          <input className={Styles.input} type='number' name='strength' value={input.strength} onChange={(e) => handleChange(e)}/>
-          {errors.strength && <p className={Styles.errors}>{errors.strength}</p>}
-       
+            <label className={Styles.nums}>
+              <StyledRange className={Styles.range} 
+                type='range' name='strength' min={1} max={250} value={input.strength} onChange={(e) => handleChange(e)}/> 
+                {input.strength}      
+          </label>
 
     </div>
 
     <div className={Styles.div2}>
         
-          <label className={Styles.subtitle}>Defense</label>
-          <input className={Styles.input} type='number' name='defense' value={input.defense} onChange={(e) => handleChange(e)}/>
-          {errors.defense && <p className={Styles.errors}>{errors.defense}</p>}
-        
+          <label className={Styles.subtitle}>Image</label>
+          <input className={Styles.input} type='url' name='image' value={input.image} onChange={(e) => handleChange(e)}/>
+          {errors.image && <p className={Styles.errors}>{errors.image}</p>}
+       
+       
           <label className={Styles.subtitle}>Speed</label>
-          <input className={Styles.input} type='number' name='speed' value={input.speed} onChange={(e) => handleChange(e)}/>
-          {errors.speed && <p className={Styles.errors}>{errors.speed}</p>}
+            <label className={Styles.nums}>
+              <StyledRange className={Styles.range}
+              type='range' name='speed' min='1' max='250' value={input.speed} onChange={(e) => handleChange(e)}/>  
+              {input.speed}  
+          </label>
           
           <label className={Styles.subtitle}>Height</label>
-          <input className={Styles.input} type='number' name='height' value={input.height} onChange={(e) => handleChange(e)}/>
-          {errors.height && <p className={Styles.errors}>{errors.height}</p>}
-   
+           <label className={Styles.nums}>
+            <StyledRange className={Styles.range} 
+              type='range' name='height' min={1} max={250} value={input.height} onChange={(e) => handleChange(e)}/>
+              {input.height}
+          </label>
+         
           <label className={Styles.subtitle}>Weight</label>
-          <input className={Styles.input} type='number' name='weight' value={input.weight} onChange={(e) => handleChange(e)}/>
-          {errors.weight && <p className={Styles.errors}>{errors.weight}</p>}
+           <label className={Styles.nums}>
+             <StyledRange className={Styles.range} 
+             type='range' name='weight' min={1} max={250} value={input.weight} onChange={(e) => handleChange(e)}/>
+             {input.weight}
+          </label>
+        
 
     </div>
 
@@ -163,11 +175,11 @@ const AddPoke = () => {
         {input.types.map(elem => 
           (<div className={Styles.typeslist}>
           <p className={Styles.typeselem}>{elem}
-          <button onClick={() => {handleDelete(elem)}}>x</button>
+          <button className={Styles.deletebtn} onClick={() => {handleDelete(elem)}}>x</button>
           </p>
            </div>))}
 
-           <button className={Styles.btncreate} type='submit'>CREATE</button>
+           <button className={Styles.btncreate} type='submit'>CATCH</button>
 
       </form>
       
