@@ -31,7 +31,7 @@ const Details = () => {
               <div className={Styles.column1}>
 
               <div className={Styles.types}>
-                  <h3>Types</h3>
+                  <h3>TYPES</h3>
                   <p>{poked[0].types?.map(t => (<li>{t.name.charAt(0).toUpperCase() + t.name.slice(1)}</li>))}</p>
               </div>
               </div>
@@ -63,7 +63,7 @@ const Details = () => {
           </div>
       }   
              <Link to='/home'> 
-             <button className={Styles.detbtn}>Home</button>
+             <button className={Styles.detbtn}>HOME</button>
              </Link>     
 
     </div>
