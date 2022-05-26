@@ -1,41 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj&display=swap');
+
+@mixin titles {
+    margin: 0px;
+    color: white;
+    font-family: 'Taviraj', serif;
+}
 
 .ctn {
-    background-image: url('../media/5.jpg');
+    background: linear-gradient(
+        120deg,
+        rgb(239, 120, 51) 50%, 
+        rgb(250, 209, 2) 50%);
     background-size: cover;
     width: 100%;
     min-height: 100vh;
 }
 
-.title {
-    margin: 0px;
+.title { 
     color: white;
-    text-align: center;
-    margin-top: 20px;
     font-family: 'Roboto Mono', monospace;
-    margin-bottom: 20px;
+    font-size: 22px;
+}
+.nametitle {
+    @include titles();
+    font-size: 70px;
+}
+
+.id {
+    color: white;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .detcard{
-    width: 750px;
-    height: 650px;
-    background-color: rgba(0, 0, 0, 0.481);
-    border-radius: 8px;
     position: absolute;
     left: 100px;
-    top: 50px;
+    top: 30px;
 }
 
-.img {
-    text-align: center;
+.imagen {
+    position: absolute;
+    top: 80px;
+    left: 850px;
+}
+.img{
+    width: 500px;
 }
 
 .types {
     color: white;
-    text-align: center;
     line-height: 2.5;
-    margin-top: 25px;
     font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
 }
 
 .column1 {
@@ -45,17 +61,15 @@
 
 .column2 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    column-gap: 45px;
 }
 
 .subtitle {
     color: white;
-    text-align: center;
-}
-
-.el {
-    color: white;
-    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
 }
 
 .detbtn {
