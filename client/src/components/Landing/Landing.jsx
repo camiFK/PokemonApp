@@ -17,12 +17,11 @@ const Landing = () => {
 
   return (
     <div className={Styles.landing}>
-
-        <div>
-            <h1 className={Styles.title}>Pokemon App</h1>
-            <button className={Styles.landingbtn} onClick={mloading}>Home</button>
-        </div>
-
+      <div className={Styles.title}>         
+            <h1>Pokemon App</h1>
+            <p className={Styles.p}>By Camila FK</p>
+            <button className={Styles.landingbtn} onClick={mloading}>Home</button>   
+        </div>      
         {
             isLoading ? <div className={Styles.loader}></div> : null
         }

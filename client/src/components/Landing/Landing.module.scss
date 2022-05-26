@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Dancing+Script&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
 
 .landing {
     width: 100%;
     height: 100vh;
-    background-image: url('../media/3.jpg');
+    background-image: url('../media/5.jpg');
     background-size: cover;/* contain */
     background-repeat: no-repeat;
     background-position: center;
@@ -12,44 +12,30 @@
     justify-content: center;
 }
 
-.title {
-    color: rgb(58, 58, 58);
-    position: absolute;
-    left: 85px;
-    top: 150px;
-    font-family: 'Dancing Script', cursive;
-    font-size: 125px;
-}
-
-.description {
-    color: rgba(255, 102, 0, 0.89);
-    font-size: 35px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.title{
+    font-size: 70px;
+    font-family: 'Boogaloo', cursive;
     position: absolute;
     left: 80px;
-    top: 230px;
-    
+    transition: transform 1s;
+}
+
+.landing:hover .title {
+    transform: translateX(50%);
 }
 
 .landingbtn {
-    position: absolute;
-    left: 80px;
-    top: 380px;
     background-color: rgb(14, 14, 14);
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
+    justify-content: center;
     text-transform: uppercase;
     cursor: pointer;
     background-size: 200% auto;
     color: white;            
     border-radius: 25px;
-    display: block;  
 }
-.myButton:hover {
-    background-color: rgba(255, 102, 0, 0.89);
-}
-
 .loader {
     width: 100%;
     height: 100%;
@@ -60,4 +46,8 @@
     display: flex;
     position: absolute;
     top: 0;
+}
+
+.p {
+    font-size: 40px;
 }
