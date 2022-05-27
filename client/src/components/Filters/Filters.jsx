@@ -4,17 +4,12 @@ import Types from './Types/Types'
 import OrderAbc from './OrderAbc/OrderAbc'
 import Strength from './Strength/Strength'
 import Styles from './Filters.module.scss'
-import { useDispatch } from 'react-redux'
-import { cleanPokemons, getPokemons } from '../../redux/actions'
 
 const Filters = () => {
 
-  const dispatch = useDispatch();
-
   function clearFilters(e) {
     e.preventDefault()
-    dispatch(cleanPokemons(dispatch))
-    dispatch(getPokemons())
+    window.location.reload()
   }
   
   return (
