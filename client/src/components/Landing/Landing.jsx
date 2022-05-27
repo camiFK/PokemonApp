@@ -12,7 +12,7 @@ const Landing = () => {
       setTimeout(()=>{
         setIsLoading(false)
         navegar("/Home")
-      },4000)
+      },4200)
     }
 
   return (
