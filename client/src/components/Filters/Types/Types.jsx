@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import { useEffect } from 'react'
 import { getAllTypes, filterTypes} from '../../../redux/actions'
 
-const Types = () => {
+const Types = ({setCurrentPage}) => {
 
     const dispatch = useDispatch();
     const allTypes = useSelector((state) => state.types)
@@ -16,6 +16,7 @@ const Types = () => {
     function handleFilterTypes(e) { 
      e.preventDefault();
      dispatch(filterTypes(e.target.value))
+     setCurrentPage(1)
     }
 
   return (

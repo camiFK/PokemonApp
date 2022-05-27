@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { filterStrength, getPokemons } from '../../../redux/actions'
 import Styles from './Strength.module.scss'
 
-const Strength = () => {
+const Strength = ({setCurrentPage}) => {
 
     const dispatch = useDispatch()
 
@@ -14,6 +14,7 @@ const Strength = () => {
     function handleFilterStrength(e) {
         e.preventDefault()
         dispatch(filterStrength(e.target.value))
+        setCurrentPage(1)
       }
 
   return (

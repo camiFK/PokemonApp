@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { filterOrderAlp, getPokemons } from '../../../redux/actions'
 import Styles from './OrderAbc.module.scss'
 
-const OrderAbc = () => {
+const OrderAbc = ({setCurrentPage}) => {
 
   const dispatch = useDispatch()
 
@@ -14,6 +14,7 @@ const OrderAbc = () => {
   function handleFilterOrder(e) {
     e.preventDefault();
     dispatch(filterOrderAlp(e.target.value))
+    setCurrentPage(1)
   }
 
   return (

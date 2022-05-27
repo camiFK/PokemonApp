@@ -39,7 +39,9 @@ const Home = () => {
         </Link>
         
       <SearchBar/>
-      <Filters/>
+      <Filters
+      setCurrentPage={useState(1)}
+      />
 
        <Pagination 
         pokemonsPerPage={pokemonsPerPage}

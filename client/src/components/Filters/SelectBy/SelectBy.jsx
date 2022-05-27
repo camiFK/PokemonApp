@@ -5,7 +5,7 @@ import { getAllTypes } from '../../../redux/actions'
 import { filterCreated } from '../../../redux/actions'
 import Styles from './SelectBy.module.scss'
 
-const SelectBy = () => {
+const SelectBy = ({setCurrentPage}) => {
 
     const dispatch = useDispatch()
 
@@ -16,6 +16,7 @@ const SelectBy = () => {
   function handleSelectBy(e) {
     e.preventDefault()
     dispatch(filterCreated(e.target.value))
+    setCurrentPage(1)
   }
 
   return (
