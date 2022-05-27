@@ -19,7 +19,7 @@ const Landing = () => {
     <div className={Styles.landing}>
       <div className={Styles.title}>         
             <h1>Pokemon App</h1>
-            <p className={Styles.p}>By Camila FK</p>
+            {/* <p className={Styles.p}>By Camila FK</p> */}
             <button className={Styles.landingbtn} onClick={mloading}>Home</button>   
         </div>      
         {

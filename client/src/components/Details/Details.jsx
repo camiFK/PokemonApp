@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getPokeDetail, cleanDetail } from '../../redux/actions';
 import Styles from './Details.module.scss'
+import typesicons from './icons'
 
 const Details = () => {
 
@@ -32,7 +33,13 @@ const Details = () => {
 
               <div className={Styles.types}>
                   <h3>TYPES</h3>
-                  <p>{poked[0].types?.map(t => (<li>{t.name.charAt(0).toUpperCase() + t.name.slice(1)}</li>))}</p>
+                  {poked[0].types?.map(t => { 
+                  return (
+                    <div key={t}>
+                      {/* <li>{t.name.charAt(0).toUpperCase() + t.name.slice(1)}</li> */}
+                      <img src={typesicons[t.name]} alt='' className={Styles.icon}/>
+                    </div>
+                  )})}
               </div>
               </div>
 
