@@ -28,7 +28,7 @@ const Home = () => {
 
     function handleReload(e) {
       e.preventDefault();
-      dispatch(getPokemons())
+      window.location.reload()
     }
     
   return (
@@ -38,7 +38,8 @@ const Home = () => {
           <button className={Styles.create}>Create Pokemon</button>
         </Link>
         
-      <SearchBar/>
+      <SearchBar
+      setCurrentPage={useState(1)}/>
       <Filters
       setCurrentPage={useState(1)}
       />

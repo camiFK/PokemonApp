@@ -3,12 +3,12 @@ import {useDispatch} from 'react-redux'
 import {useState} from 'react'
 import { getPokeName } from '../../redux/actions'
 import Styles from './SearchBar.module.scss'
+import NotFound from './NotFound'
 
-const SearchBar = () => {
+const SearchBar = ({setCurrentPage}) => {
 
 const dispatch = useDispatch();
-const [loading, setLoading] = useState(false)
-const [name, setName] = useState("") // av
+const [name, setName] = useState()
 const [error, setError] = useState(false)
 
   function handleChange(e) {
@@ -20,23 +20,15 @@ const [error, setError] = useState(false)
     e.preventDefault();
     dispatch(getPokeName(name))
     .then((res) => {
-      !res ? setError(true) : setError(false);
-      setLoading(false)
-    })
-    .catch((error) => console.log(error));
-    setName('')
+      !res ? setError(true) : setError(false) })
+    setName("")
+    setCurrentPage(1)
   }
 
   return (
     <div className={Styles.ctn}>
 
-     <div className='searchError'>
-        { error && <div className='searchError'>Pokemon not found :(</div> }
-        { 
-          loading && loading ?
-            (<div className='searching'>Searching...</div>) : null
-        }
-      </div>
+      {error && <NotFound/>}
    
         <div className={Styles.searchbar}>
          <input
