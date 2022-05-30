@@ -8,6 +8,7 @@ import Pagination from '../Pagination/Pagination'
 import Cards from '../Cards/Cards'
 import SearchBar from '../SearchBar/SearchBar'
 import Filters from '../Filters/Filters'
+import Loader from '../Loader/Loader'
 
 const Home = () => {
 
@@ -32,6 +33,8 @@ const Home = () => {
     }
     
   return (
+    <div>
+     {pokemonsReducer.length > 0 ? 
     <div className={Styles.home}>
 
         <Link to='/pokemons'>
@@ -70,6 +73,9 @@ const Home = () => {
          }
 
        </div>
+    </div>
+    : <Loader/>
+     }
     </div>
   )
 }
