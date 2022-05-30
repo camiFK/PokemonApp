@@ -39,9 +39,9 @@ const Home = () => {
         </Link>
         
       <SearchBar
-      setCurrentPage={useState(1)}/>
+      setCurrentPage={setCurrentPage}/>
       <Filters
-      setCurrentPage={useState(1)}
+      setCurrentPage={setCurrentPage}
       />
 
        <Pagination 
@@ -70,9 +70,6 @@ const Home = () => {
          }
 
        </div>
-
-       
-
     </div>
   )
 }

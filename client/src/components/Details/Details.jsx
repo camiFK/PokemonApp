@@ -13,6 +13,7 @@ const Details = () => {
     const poked = useSelector((state) => state.detail)
 
     useEffect(() => {
+        dispatch(cleanDetail(dispatch))
         dispatch(getPokeDetail(id))
         return () => {
          dispatch(cleanDetail(dispatch))
