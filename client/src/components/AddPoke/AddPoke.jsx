@@ -54,7 +54,7 @@ const AddPoke = () => {
 
   function handleTypes(e) {
     if(input.types.length >= 2) {
-      alert('Three types maximum')
+      alert('Two types maximum')
     } else {
       setInput({
           ...input,

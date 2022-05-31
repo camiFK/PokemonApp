@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { getPokeDetail, cleanDetail } from '../../redux/actions';
 import Styles from './Details.module.scss'
 import typesicons from './icons'
+import Loader from '../Loader/Loader'
 
 const Details = () => {
 
@@ -21,16 +22,17 @@ const Details = () => {
        },[dispatch, id])
 
   return (
-    <div className={Styles.ctn}>
+    <div>
+      { poked.length > 0 ?
 
-      {
-          poked.length > 0 
-          ? 
+        <div className={Styles.ctn}>
+          
           <div className={Styles.detcard}>
             <h1 className={Styles.nametitle}>{poked[0].name.charAt(0).toUpperCase() + poked[0].name.slice(1)} </h1>
 
               <p className={Styles.subtitle}>Id: {poked[0].id}</p>
-              <div className={Styles.column1}>
+
+            <div className={Styles.column1}>
 
               <div className={Styles.types}>
                   <h3>TYPES</h3>
@@ -42,7 +44,7 @@ const Details = () => {
                     </div>
                   )})}
               </div>
-              </div>
+            </div>
 
                 <h3 className={Styles.title}>STATISTICS</h3>
               <div className={Styles.column2}>
@@ -64,15 +66,15 @@ const Details = () => {
                 <div className={Styles.imagen}>
                  <img src={poked[0].image} alt="img not found" className={Styles.img}/>
                 </div>
+
           </div>
-          :
-          <div className={Styles.loader}>
-          </div>
-      }   
              <Link to='/home'> 
              <button className={Styles.detbtn}>HOME</button>
              </Link>     
+          </div>
 
+          : <Loader/>
+      }
     </div>
   )
 }
