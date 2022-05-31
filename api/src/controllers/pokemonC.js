@@ -6,7 +6,7 @@ const getPokemonsApi = async () => {
         let allUrls= []
         let id = 1;
 
-        while (id <= 40) {
+        while (id <= 53) {
             allUrls.push(axios(`https://pokeapi.co/api/v2/pokemon/${id}`))
             id++
         }
