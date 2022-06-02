@@ -2,13 +2,11 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPokemons } from '../../redux/actions'
-import { Link } from 'react-router-dom'
 import Styles from './Home.module.scss'
 import Pagination from '../Pagination/Pagination'
 import Cards from '../Cards/Cards'
-import SearchBar from '../SearchBar/SearchBar'
-import Filters from '../Filters/Filters'
 import Loader from '../Loader/Loader'
+import NavBar from './NavBar'
 
 const Home = () => {
 
@@ -27,37 +25,20 @@ const Home = () => {
       dispatch(getPokemons())
     }, [dispatch]);
 
-    function handleReload(e) {
-      e.preventDefault();
-      window.location.reload()
-    }
-    
   return (
     <div>
      {pokemonsReducer.length > 0 ? 
     <div className={Styles.home}>
 
-        <Link to='/pokemons'>
-          <button className={Styles.create}>Create Pokemon</button>
-        </Link>
-        
-      <SearchBar
-      setCurrentPage={setCurrentPage}/>
-      <Filters
-      setCurrentPage={setCurrentPage}
-      />
-
+       <NavBar/>
+      
        <Pagination 
         pokemonsPerPage={pokemonsPerPage}
         pokemonsReducer={pokemonsReducer?.length}
         paginate={paginate}
         /> 
 
-       <div>
-         <button className={Styles.homebtn} onClick={handleReload}>Reload</button>
-       </div> 
-
-       <div className={Styles.allcards}>
+      <div className={Styles.allcards}>
          {
            currentPokemons?.map((pokemon) => {
              return (

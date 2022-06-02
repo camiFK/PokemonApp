@@ -41,8 +41,11 @@
     margin-top: 20px;
     margin-left: 30px;
     border: none;
+    border: 1px solid white;
+    background-color: orangered;
+    color: white;
 }
-.homebtn:hover{cursor: pointer;}
+.homebtn:hover{cursor: pointer; background-color: rgba(0, 0, 0, 0.799);}
 
 .form {
     display: flex;
@@ -106,7 +109,7 @@
     background-color: orangered;
     color: white;
 }
-.btncreate:hover{cursor: pointer;}
+.btncreate:hover{cursor: pointer; background-color: rgba(0, 0, 0, 0.799);}
 
 .div1 {
     display: flex;

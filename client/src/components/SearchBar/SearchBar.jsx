@@ -26,11 +26,11 @@ const [error, setError] = useState(false)
   }
 
   return (
-    <div className={Styles.ctn}>
+    <>
 
       {error && <NotFound/>}
    
-        <div className={Styles.searchbar}>
+        <div>
          <input
           className={Styles.input}
           type='text'
@@ -46,7 +46,7 @@ const [error, setError] = useState(false)
          </button>
         </div>
 
-    </div>
+    </>
   )
 }
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import Styles from './Types.module.scss'
+import Styles from './Filters.module.scss'
 import {useSelector, useDispatch} from 'react-redux'
 import { useEffect } from 'react'
-import { getAllTypes, filterTypes} from '../../../redux/actions'
+import { getAllTypes, filterTypes} from '../../redux/actions'
 
 const Types = ({setCurrentPage}) => {
 
@@ -20,20 +20,19 @@ const Types = ({setCurrentPage}) => {
     }
 
   return (
-    <div>
-       <h4 className={Styles.title}>Types</h4>
+    <>
        <select defaultValue='Filter By...' className={Styles.filter} onChange={(e) => handleFilterTypes(e)}>
-          <option disabled>Filter By...</option>
-          <option value='all'>All</option>
+          <option className={Styles.option} disabled>Filter By...</option>
+          <option className={Styles.option} value='all'>All</option>
           {    
             allTypes?.map((el) => {
-              return <option key={el.id} value={el.name}>{el.name}</option>;
+              return <option className={Styles.option} key={el.id} value={el.name}>{el.name}</option>;
             })
           }
             
         </select>
 
-    </div>
+    </>
   )
 }
 

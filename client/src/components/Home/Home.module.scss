@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
 
 .home {
-    background-image: linear-gradient(rgba(255, 149, 0, 0.89), rgba(255, 13, 0, 0.847));
+    background-image: linear-gradient(rgb(239, 0, 0), rgb(50, 67, 215));
     background-size: cover;
     width: 100%;
     min-height: 100vh;
@@ -10,30 +10,27 @@
 .allcards {
     display: grid;
     grid-template-columns: repeat(4, 0fr);
-    justify-content: right;
+    justify-content: center;
     margin-top: 70px;
-    margin-right: 30px;
-
+}
+@media (max-width: 700px) {
+    .allcards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.homebtn {
+.navbtn {
     border-radius: 8px;
     height: 35px;
-    width: 80px;
-    position: absolute;
-    top: 40px;
-    right: 20px;
+    width: 120px;
     border: none;
+    margin: 13px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 55, 0);
+    border: 2px solid black;
 }
-.homebtn:hover{cursor: pointer;}
+.navbtn:hover{cursor: pointer; background-color: #000000d5;}
 
-.create {
-    border-radius: 8px;
-    height: 35px;
-    width: 150px;
-    position: absolute;
-    left: 55px;
-    top: 40px;
-    border: none;
+.img {
+    width: 170px;
 }
-.create:hover{cursor: pointer;}
