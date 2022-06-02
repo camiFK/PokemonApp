@@ -60,9 +60,10 @@ const Details = () => {
       
               </div>
 
-                <div className={Styles.imagen}>
-                 <img src={poked[0].image} alt="img not found" className={Styles.img}/>
-                </div>
+              <div className={Styles.imagen}>
+                <img src={poked[0].image} alt="img not found" className={Styles.img}/>
+               </div>  
+                
 
           </div>
              <Link to='/home'> 
