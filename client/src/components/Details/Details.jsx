@@ -32,8 +32,6 @@ const Details = () => {
 
               <p className={Styles.subtitle}>Id: {poked[0].id}</p>
 
-            <div className={Styles.column1}>
-
               <div className={Styles.types}>
                   <h3>TYPES</h3>
                   {poked[0].types?.map(t => { 
@@ -44,7 +42,6 @@ const Details = () => {
                     </div>
                   )})}
               </div>
-            </div>
 
                 <h3 className={Styles.title}>STATISTICS</h3>
               <div className={Styles.column2}>

@@ -19,7 +19,7 @@ const Filters = ({setCurrentPage}) => {
       <OrderAbc setCurrentPage={setCurrentPage}/>
       <Strength setCurrentPage={setCurrentPage}/>
       <div>
-        <button className={Styles.btn} onClick={e => {clearFilters(e)}}>Clear</button>
+        <button className={Styles.btn} onClick={e => {clearFilters(e)}}>Reset</button>
       </div>
     </div>
   )

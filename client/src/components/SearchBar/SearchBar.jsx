@@ -3,13 +3,11 @@ import {useDispatch} from 'react-redux'
 import {useState} from 'react'
 import { getPokeName } from '../../redux/actions'
 import Styles from './SearchBar.module.scss'
-import NotFound from './NotFound'
 
 const SearchBar = ({setCurrentPage}) => {
 
 const dispatch = useDispatch();
 const [name, setName] = useState()
-const [error, setError] = useState(false)
 
   function handleChange(e) {
     e.preventDefault();
@@ -19,17 +17,12 @@ const [error, setError] = useState(false)
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(getPokeName(name))
-    .then((res) => {
-      !res ? setError(true) : setError(false) })
     setName("")
     setCurrentPage(1)
   }
 
   return (
     <>
-
-      {error && <NotFound/>}
-   
         <div>
          <input
           className={Styles.input}
@@ -45,7 +38,6 @@ const [error, setError] = useState(false)
            Search
          </button>
         </div>
-
     </>
   )
 }

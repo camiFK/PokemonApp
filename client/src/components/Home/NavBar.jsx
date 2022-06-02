@@ -6,27 +6,17 @@ import {NavContainer} from './StyledNav'
 
 const NavBar = ({setCurrentPage}) => {
 
-  function handleReload(e) {
-    e.preventDefault();
-    window.location.reload()
-  }
-  
   return (
     <NavContainer>
 
        <div className='elements'>
-         <img className='img' src='https://www.freepnglogos.com/uploads/pokemon-logo-text-png-7.png' alt='not found' />
 
        <Link to='/pokemons'>
-          <button className='navbtn'>Create</button>
+         <img className='img' src='https://www.freepnglogos.com/uploads/pokemon-logo-text-png-7.png' alt='not found' />
        </Link>
 
         <Filters setCurrentPage={setCurrentPage}/>
         <SearchBar setCurrentPage={setCurrentPage}/>
-
-        <div>
-         <button className='navbtn' onClick={handleReload}>Reload</button>
-        </div>
 
        </div>
      

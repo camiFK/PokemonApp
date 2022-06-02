@@ -2,10 +2,15 @@ import React from 'react'
 import Styles from './Cards.module.scss'
 import { Link } from 'react-router-dom'
 import typesicons from '../Details/icons'
+import NotFound from '../SearchBar/NotFound'
 
-const Cards = ({name, image, types, id}) => {
+const Cards = ({name, image, types, id, error}) => {
   return (
-    <div className={Styles.container}>
+    <>
+    {error ? 
+    (<NotFound error={error}/>)
+    :
+    (<div className={Styles.container}>
         <div className={Styles.cards}>
 
          <div className={Styles.link}>
@@ -27,7 +32,9 @@ const Cards = ({name, image, types, id}) => {
 
         </div>
 
-    </div>
+    </div>)
+  }
+    </>
   )
 }
 

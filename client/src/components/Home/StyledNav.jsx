@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const NavContainer = styled.nav`
 
     .img {
-        width: 170px;
+        width: 190px;
+        margin-left: 10px;
     }
 
     .navbtn {
@@ -26,7 +27,7 @@ export const NavContainer = styled.nav`
         justify-content: space-between;
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1200px) {
         .elements {
             width: 100%;
             height: 570px;

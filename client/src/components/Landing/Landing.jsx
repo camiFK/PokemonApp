@@ -7,7 +7,7 @@ const Landing = () => {
   return (
     <div className={Styles.landing}>
       <div className={Styles.title}>         
-            <h1>Pokemon App</h1>
+            <h1 data-text='Pokemon App'>Pokemon App</h1>
             <Link to='/home'>
               <button className={Styles.landingbtn}>Home</button>   
             </Link>

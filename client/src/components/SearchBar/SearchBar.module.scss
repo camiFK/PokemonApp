@@ -14,12 +14,21 @@
     color: rgb(255, 255, 255);
     background-color: rgb(255, 55, 0);
     border: 2px solid black;
+    margin-right: 10px;
 }
 
 .btn:hover{cursor: pointer; background-color: #000000d5;}
 
 .errtitle {
-    color: rgb(207, 0, 0);
-    position: absolute;
-    padding-top: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.error {
+    width: 350px;
+    height: 400px;
+}
+
+.errctn {
+    justify-content: center;
+    text-align: center;
 }

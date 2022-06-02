@@ -21,8 +21,6 @@ const Home = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
-    const [isOpen, setIsOpen] = useState(false);
-    const icon = () => {setIsOpen(!isOpen)}
 
     useEffect(() => {
       dispatch(getPokemons())
@@ -33,7 +31,7 @@ const Home = () => {
      {pokemonsReducer.length > 0 ? 
     <div className={Styles.home}>
 
-       <NavBar icon={icon}/>
+       <NavBar setCurrentPage={setCurrentPage}/>
       
        <Pagination 
         pokemonsPerPage={pokemonsPerPage}
@@ -45,6 +43,9 @@ const Home = () => {
          {
            currentPokemons?.map((pokemon) => {
              return (
+               pokemon.error ? 
+               <Cards key={1} error={pokemon.error} />
+               :
                <Cards
                key={pokemon.id}
                id={pokemon.id}
