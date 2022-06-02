@@ -18,7 +18,7 @@
 .filter:hover{cursor: pointer;}
 
 .filter {
-    @include allfilters()
+    @include allfilters();
 }
 .title {
     text-align: center;
@@ -42,6 +42,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+
+    @media (max-width: 1300px) {
+        display: grid;
+
+        .btn {
+            width: 120px;
+            height: 35px;
+            margin: 13px;
+        }
+
+        .filter {
+            width: 200px;
+        }
+    }
 }
 
 .option {color: black;}

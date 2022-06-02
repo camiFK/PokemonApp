@@ -21,6 +21,9 @@ const Home = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
+    const [isOpen, setIsOpen] = useState(false);
+    const icon = () => {setIsOpen(!isOpen)}
+
     useEffect(() => {
       dispatch(getPokemons())
     }, [dispatch]);
@@ -30,7 +33,7 @@ const Home = () => {
      {pokemonsReducer.length > 0 ? 
     <div className={Styles.home}>
 
-       <NavBar/>
+       <NavBar icon={icon}/>
       
        <Pagination 
         pokemonsPerPage={pokemonsPerPage}

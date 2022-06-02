@@ -8,29 +8,10 @@
 }
 
 .allcards {
-    display: grid;
-    grid-template-columns: repeat(4, 0fr);
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-around;
     margin-top: 70px;
 }
-@media (max-width: 700px) {
-    .allcards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-.navbtn {
-    border-radius: 8px;
-    height: 35px;
-    width: 120px;
-    border: none;
-    margin: 13px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(255, 55, 0);
-    border: 2px solid black;
-}
-.navbtn:hover{cursor: pointer; background-color: #000000d5;}
-
-.img {
-    width: 170px;
-}

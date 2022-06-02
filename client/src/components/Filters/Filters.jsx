@@ -18,7 +18,9 @@ const Filters = ({setCurrentPage}) => {
       <Types setCurrentPage={setCurrentPage}/>
       <OrderAbc setCurrentPage={setCurrentPage}/>
       <Strength setCurrentPage={setCurrentPage}/>
-      <button className={Styles.btn} onClick={e => {clearFilters(e)}}>Clear</button>
+      <div>
+        <button className={Styles.btn} onClick={e => {clearFilters(e)}}>Clear</button>
+      </div>
     </div>
   )
 }
