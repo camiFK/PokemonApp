@@ -9,7 +9,7 @@ Single Page Application (SPA) designed and developed for Henry Bootcamp as an In
 - [ ] React
 - [ ] Redux
 - [ ] Css Modules - Styled Components (no frameworks)
-- [ ] Express
+- [ ] Node - Express
 - [ ] Sequelize - Postgres
 - [ ] API - [pokeapi](https://pokeapi.co/)
 
